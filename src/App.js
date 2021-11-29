@@ -1,10 +1,21 @@
 import React from "react";
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-import store from './redux/store';
-import { Provider } from "react-redux";
 import Admin from "./pages/Admin";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
+import { Provider } from "react-redux";
+import { composeWithDevTools } from "redux-devtools-extension";
+import { createStore, applyMiddleware } from "redux";
+import thunk from "redux-thunk";
+import rootReducer from './redux/reducers/index';
+import { getUser } from "./redux/actions/user.action";
+
+const store = createStore(
+  rootReducer,
+  composeWithDevTools(applyMiddleware(thunk))
+);
+
+store.dispatch(getUser());
 
 function App() {
   return (
