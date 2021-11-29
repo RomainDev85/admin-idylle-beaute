@@ -21,9 +21,14 @@ export const getUser = () => {
 export const setUser = (data) => {
     return (dispatch) => {
         return axios
-            .post("http://localhost:5000/api/login", data)
+            ({
+                method: "post",
+                url: "http://localhost:5000/api/login",
+                withCredentials: true,
+                data: data
+            })
             .then((res) => {
-                dispatch({type: SET_USER, payload: res.data})
+                dispatch(getUser())
             })
             .catch(err => console.log(err));
     };

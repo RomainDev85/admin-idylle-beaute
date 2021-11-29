@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { setUser } from '../redux/actions/user.action';
 
 export default function FormLogin() {
@@ -26,6 +27,7 @@ export default function FormLogin() {
     }
 
     return (
+        <>
         <form onSubmit={(e) => handleForm(e)}>
             <label htmlFor="email">Email</label>
             <input type="text" id="email" value={email} onChange={(e) => setEmail(e.target.value)}/>
@@ -35,5 +37,7 @@ export default function FormLogin() {
 
             <input type="submit" value="Connection" />
         </form>
+        <Link to="/">Home</Link>
+        </>
     )
 }
