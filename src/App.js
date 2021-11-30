@@ -18,6 +18,7 @@ const store = createStore(
 
 store.dispatch(getUser());
 
+
 function App() {
   return (
     <Provider store={store}>

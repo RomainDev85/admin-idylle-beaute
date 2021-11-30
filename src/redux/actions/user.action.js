@@ -8,7 +8,7 @@ export const getUser = () => {
         return axios
             ({
                 method: "get",
-                url: "http://localhost:5000/jwt",
+                url: `${process.env.REACT_APP_BASE_URL}/jwt`,
                 withCredentials: true,
             })
             .then((res) => {
@@ -23,7 +23,7 @@ export const setUser = (data) => {
         return axios
             ({
                 method: "post",
-                url: "http://localhost:5000/api/login",
+                url: `${process.env.REACT_APP_BASE_URL}/api/login`,
                 withCredentials: true,
                 data: data
             })
