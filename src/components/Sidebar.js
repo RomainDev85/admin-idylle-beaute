@@ -1,6 +1,8 @@
-import React from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { setMenu } from '../redux/actions/menu.action';
+import { logoutUser } from '../redux/actions/user.action';
+import ButtonSidebar from './ButtonSidebar';
 
 export default function Sidebar() {
 
@@ -9,9 +11,13 @@ export default function Sidebar() {
     const dispatch = useDispatch();
 
     const handleClick = () => {
-        if(menu.open) dispatch(setMenu({open: false}))
-        else dispatch(setMenu({open: true}))
-    }
+        if(menu.open) dispatch(setMenu({open: false}));
+        else dispatch(setMenu({open: true}));
+    };
+
+    const Logout = () => {
+        dispatch(logoutUser());
+    };
 
     return (
         <nav className={menu.open ? "sidebar-open" : "sidebar-close"}>
@@ -20,6 +26,7 @@ export default function Sidebar() {
             </div>
             <h1>Idylle Beauté</h1>
             <h2>{user.firstname} {user.lastname}</h2>
+            <ButtonSidebar action={Logout} text="Déconnexion"/>
         </nav>
     )
 }

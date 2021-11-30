@@ -35,8 +35,6 @@ export default function Login() {
         };
 
         await dispatch(setUser(data));
-
-        console.log(user);
     }
 
 

@@ -2,6 +2,7 @@ import axios from 'axios';
 
 export const GET_USER = "GET_USER";
 export const SET_USER = "SET_USER";
+export const LOGOUT_USER = "LOGOUT_USER"
 
 export const getUser = () => {
     return (dispatch) => {
@@ -32,6 +33,21 @@ export const setUser = (data) => {
                     dispatch({type: SET_USER, payload: res.data})
                 }
                 else dispatch(getUser());
+            })
+            .catch(err => console.log(err));
+    };
+};
+
+export const logoutUser = () => {
+    return (dispatch) => {
+        return axios
+            ({
+                method: "get",
+                url: `${process.env.REACT_APP_BASE_URL}/api/logout`,
+                withCredentials: true,
+            })
+            .then((res) => {
+                 dispatch({type: LOGOUT_USER, payload: res.data})
             })
             .catch(err => console.log(err));
     };

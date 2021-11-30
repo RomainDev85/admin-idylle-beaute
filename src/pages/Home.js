@@ -14,7 +14,7 @@ export default function Home() {
             </div>
             <div className="button">
                 <a href="http://localhost:8080" rel="noreferrer" target="_blank">Site web</a>
-                {user.error ? <Link to="/login">Connection</Link> : <Link to="/admin">Administration</Link>}
+                {user.user === null || user.error ? <Link to="/login">Connexion</Link> : <Link to="/admin">Administration</Link>}
             </div>
         </main>
     )
