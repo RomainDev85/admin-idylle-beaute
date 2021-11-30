@@ -28,7 +28,10 @@ export const setUser = (data) => {
                 data: data
             })
             .then((res) => {
-                dispatch(getUser())
+                if(res.data.error) {
+                    dispatch({type: SET_USER, payload: res.data})
+                }
+                else dispatch(getUser());
             })
             .catch(err => console.log(err));
     };

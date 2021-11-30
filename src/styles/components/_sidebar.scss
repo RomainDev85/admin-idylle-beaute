@@ -1,0 +1,106 @@
+.sidebar-open {
+    min-height: 100vh;
+    background: $color-black;
+    position: relative;
+    width: 300px;
+    transition-duration: 0.7s;
+
+    h1 {
+        opacity: 1;
+        font-family: $font-first;
+        color: $color-light;
+        font-weight: lighter;
+        font-size: 40px;
+        margin: 10px;
+        transition-duration: 1s;
+        transition-delay: 0.5s;
+    }
+    h2 {
+        opacity: 1;
+        text-transform: capitalize;
+        font-family: $font-second;
+        color: $color-light;
+        margin-left: 10px;
+        transition-duration: 1s;
+        transition-delay: 0.5s;
+    }
+    
+}
+.sidebar-close {
+    min-height: 100vh;
+    background: $color-black;
+    position: relative;
+    width: 70px;
+    transition-duration: 0.7s;
+
+    h1 {
+        opacity: 0;
+        font-family: $font-first;
+        color: $color-light;
+        font-weight: lighter;
+        font-size: 40px;
+        margin: 10px;
+    }
+    h2 {
+        opacity: 0;
+        text-transform: capitalize;
+        font-family: $font-second;
+        color: $color-light;
+        margin-left: 10px;
+    }
+}
+.menu-btn {
+    position: absolute;
+    display: flex;
+    background: $color-light;
+    border: 1px solid $color-light;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    top: 35px;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    transition: all .5s ease-in-out;
+    z-index: 11;
+    /* border: 3px solid #fff; */
+}
+.menu-btn__burger {
+    width: 25px;
+    height: 3px;
+    background: $color-gray;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px $color-gray;
+    transition: all .5s ease-in-out;
+  }
+.menu-btn__burger::before,
+.menu-btn__burger::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 3px;
+    background: $color-gray;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px $color-gray;
+    transition: all .5s ease-in-out;
+}
+.menu-btn__burger::before {
+    transform: translateY(-8px);
+}
+.menu-btn__burger::after {
+    transform: translateY(8px);
+}
+/* ANIMATION */
+.menu-btn.open .menu-btn__burger {
+    transform: translateX(-50px);
+    background: transparent;
+    box-shadow: none;
+}
+.menu-btn.open .menu-btn__burger::before {
+    transform: rotate(45deg) translate(35px, -35px);
+}
+.menu-btn.open .menu-btn__burger::after {
+    transform: rotate(-45deg) translate(35px, 35px);
+}

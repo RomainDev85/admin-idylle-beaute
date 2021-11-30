@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Dancing+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+
+$color-black: #212529;
+$color-gray: #6c757d;
+$color-light: #f8f9fa;
+$color-blue: #0d6efd;
+$color-green: #198754;
+$color-red: #dc3545;
+$color-yellow: #ffc107;
+
+$font-first: 'Dancing Script', cursive;
+$font-second: 'DM Serif Display', serif;
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #fff;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
