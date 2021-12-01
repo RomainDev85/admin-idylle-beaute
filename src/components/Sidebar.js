@@ -2,13 +2,12 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setMenu } from '../redux/actions/menu.action';
 import { logoutUser } from '../redux/actions/user.action';
-import ButtonSidebar from './ButtonSidebar';
+
 
 export default function Sidebar() {
-
-    const user = useSelector(state => state.userReducer);
     const menu = useSelector(state => state.menuReducer);
     const dispatch = useDispatch();
+
 
     const handleClick = () => {
         if(menu.open) dispatch(setMenu({open: false}));
@@ -25,8 +24,12 @@ export default function Sidebar() {
                 <div className="menu-btn__burger"></div>
             </div>
             <h1>Idylle Beauté</h1>
-            <h2>{user.firstname} {user.lastname}</h2>
-            <ButtonSidebar action={Logout} text="Déconnexion"/>
+            <div className="btn-group">
+                <button className={menu.open ? "btn-open btn-classic" : "btn-close btn-classic"}><span>Votre compte</span><i className="far fa-user-circle"></i></button>
+                <button className={menu.open ? "btn-open btn-classic" : "btn-close btn-classic"}><span>Ajouter catégorie</span> <i className="far fa-plus-square"></i></button>
+                <button className={menu.open ? "btn-open btn-classic" : "btn-close btn-classic"}><span>Ajouter prestation</span> <i className="far fa-plus-square"></i></button>
+                <button onClick={Logout} className={menu.open ? "btn-open btn-danger" : "btn-close btn-danger"} ><span>Déconnexion</span> <i className="fas fa-sign-out-alt"></i></button>
+            </div>
         </nav>
     )
 }

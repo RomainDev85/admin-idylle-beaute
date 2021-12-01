@@ -1,5 +1,6 @@
 .sidebar-open {
     min-height: 100vh;
+    height: 100%;
     background: $color-black;
     position: relative;
     width: 300px;
@@ -12,19 +13,9 @@
         font-weight: lighter;
         font-size: 40px;
         margin: 10px;
-        transition-duration: 1s;
-        transition-delay: 0.5s;
-    }
-    h2 {
-        opacity: 1;
-        text-transform: capitalize;
-        font-family: $font-second;
-        color: $color-light;
-        margin-left: 10px;
-        transition-duration: 1s;
-        transition-delay: 0.5s;
-    }
-    
+        transition-duration: 0.8s;
+        transition-delay: 0.2s;
+    }  
 }
 .sidebar-close {
     min-height: 100vh;
@@ -41,56 +32,43 @@
         font-size: 40px;
         margin: 10px;
     }
-    h2 {
-        opacity: 0;
-        text-transform: capitalize;
-        font-family: $font-second;
-        color: $color-light;
-        margin-left: 10px;
-    }
 }
 .menu-btn {
     position: absolute;
     display: flex;
-    background: $color-light;
-    border: 1px solid $color-light;
-    border-radius: 50%;
     justify-content: center;
     align-items: center;
     width: 50px;
     height: 50px;
-    top: 35px;
-    right: 10px;
+    top: 40px;
+    right: 12px;
     transform: translateY(-50%);
     cursor: pointer;
     transition: all .5s ease-in-out;
     z-index: 11;
-    /* border: 3px solid #fff; */
 }
 .menu-btn__burger {
-    width: 25px;
-    height: 3px;
-    background: $color-gray;
+    width: 35px;
+    height: 5px;
+    background: $color-light;
     border-radius: 5px;
-    box-shadow: 0 2px 5px $color-gray;
     transition: all .5s ease-in-out;
   }
 .menu-btn__burger::before,
 .menu-btn__burger::after {
     content: '';
     position: absolute;
-    width: 25px;
-    height: 3px;
-    background: $color-gray;
+    width: 35px;
+    height: 5px;
+    background: $color-light;
     border-radius: 5px;
-    box-shadow: 0 2px 5px $color-gray;
     transition: all .5s ease-in-out;
 }
 .menu-btn__burger::before {
-    transform: translateY(-8px);
+    transform: translateY(-10px);
 }
 .menu-btn__burger::after {
-    transform: translateY(8px);
+    transform: translateY(10px);
 }
 /* ANIMATION */
 .menu-btn.open .menu-btn__burger {
@@ -103,4 +81,82 @@
 }
 .menu-btn.open .menu-btn__burger::after {
     transform: rotate(-45deg) translate(35px, 35px);
+}
+
+.btn-group {
+    position: absolute;
+    top: 40px;
+    border-top: 4px solid $color-gray;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+
+    .btn-open {
+        position: relative;
+        width: 300px;
+        height: 100px;
+        padding: 20px;
+        border-top: 0;
+        border-bottom: 2px solid gray;
+        border-left: 0;
+        border-right: 0;
+        font-weight: 100;
+        color: $color-light;
+        font-size: 18px;
+        transition-duration: 0.7s;
+
+        span {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 20px;
+            font-family: $font-second;
+            font-size: 22px;
+            opacity: 1;
+            transition: ease-in-out 0.5s;
+            transition-delay: 0.3s;
+        }
+    }
+    .btn-close {
+        position: relative;
+        width: 70px;
+        height: 100px;
+        padding: 20px;
+        border-top: 0;
+        border-bottom: 2px solid gray;
+        border-left: 0;
+        border-right: 0;
+        font-weight: 100;
+        color: $color-light;
+        font-size: 18px;
+        transition-duration: 0.7s; 
+
+        span {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 20px;
+            font-family: $font-second;
+            font-size: 22px;
+            opacity: 0;
+            transition: all 0.7;
+        }
+    }
+    .btn-danger {
+        background:  $color-red;
+        font-family: $font-second;
+    }
+    .btn-classic {
+        background:  $color-black;
+        font-family: $font-second;
+    }
+
+    i {
+        position: absolute;   
+        font-size: 40px;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: $color-light;
+    }
 }
