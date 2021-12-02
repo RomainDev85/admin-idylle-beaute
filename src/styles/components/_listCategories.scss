@@ -1,0 +1,27 @@
+.category-content {
+    border: 1px solid $color-gray;
+    width: 80%;
+    margin: 10px auto;
+    padding: 20px 40px;
+
+    .category {
+        display: flex;
+        justify-content: space-between;
+
+        h4 {
+            font-family: $font-second;
+            font-size: 22px;
+            font-weight: lighter;
+        }
+
+        i {
+            margin: auto 5px;
+            font-size: 40px;
+        }
+        .fa-times-circle {
+            color: $color-red;
+        }
+
+        
+    }
+}

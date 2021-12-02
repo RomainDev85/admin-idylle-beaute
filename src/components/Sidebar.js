@@ -1,5 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { resetCategories } from '../redux/actions/categories.action';
 import { setMenu } from '../redux/actions/menu.action';
 import { logoutUser } from '../redux/actions/user.action';
 
@@ -16,6 +17,7 @@ export default function Sidebar() {
 
     const Logout = () => {
         dispatch(logoutUser());
+        dispatch(resetCategories());
     };
 
     return (

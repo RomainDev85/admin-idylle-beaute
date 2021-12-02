@@ -1,3 +1,28 @@
 .admin-page {
     display: flex;
+
+    .admin-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        transition: all 0.7s;
+
+        h2 {
+            margin: 40px;
+            font-family: $font-first;
+            font-size: 50px;
+        }
+
+        h3 {
+            width: 80%;
+            font-family: $font-second;
+            font-size: 25px;
+            font-weight: lighter;
+            margin: 20px auto;
+        }
+
+        
+    }
 }
