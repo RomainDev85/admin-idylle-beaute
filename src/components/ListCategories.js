@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { getCategories } from '../redux/actions/categories.action';
+import { getServicesByCategory } from '../redux/actions/services.action';
 import { isEmpty } from '../utils/Utils';
 
 export default function ListCategories() {
@@ -23,6 +24,10 @@ export default function ListCategories() {
         )
     }
 
+    const GetServices = (urlCategory) => {
+        dispatch(getServicesByCategory(urlCategory));
+    }
+
     return (
         <>
             <h3>Liste catégories</h3>
@@ -31,8 +36,8 @@ export default function ListCategories() {
                     <div className="category">
                         <h4>{category.nom}</h4>
                         <div className="btn-category">
-                            <i class="far fa-arrow-alt-circle-down"></i>
-                            <i class="far fa-times-circle"></i>
+                            <i className="far fa-arrow-alt-circle-down" onClick={(e) => {e.preventDefault(); GetServices(category.url_categorie);}}></i>
+                            <i className="far fa-times-circle"></i>
                         </div>
                     </div>
                     <ul className={category.nom}></ul>
