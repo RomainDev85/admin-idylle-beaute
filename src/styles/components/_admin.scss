@@ -1,10 +1,11 @@
 .admin-page {
     display: flex;
+    position: relative;
+    min-height: 100vh;
 
     .admin-content {
         display: flex;
         flex-direction: column;
-        justify-content: center;
         align-items: center;
         width: 100vw;
         transition: all 0.7s;

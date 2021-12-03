@@ -10,10 +10,11 @@ export default function Category({idCategory, nameCategory, urlCategory}) {
     const dispatch = useDispatch();
 
     const GetServices = (urlCategory) => {
-        if(!showServices) dispatch(getServicesByCategory(urlCategory));
+        if(!showServices) dispatch(getServicesByCategory(urlCategory, idCategory));
         else return null;
     }
 
+    
     return (
         <div className="category-content" key={idCategory}>
             <div className="category">

@@ -1,4 +1,4 @@
-import { GET_SERVICES_BY_CATEGORY, RESET_SERVICES } from "../actions/services.action";
+import { GET_SERVICES_BY_CATEGORY, RESET_SERVICES, DELETE_SERVICE } from "../actions/services.action";
 
 const initialState = [];
 
@@ -10,6 +10,8 @@ export default function servicesReducer(state = initialState, action){
             else return [...state, action.payload];
         case RESET_SERVICES:
             return action.payload;
+        case DELETE_SERVICE:
+            return state.map((category) => category.services.filter((service) => service.prestation_id !== action.payload.idService))
         default: 
             return state;
     }

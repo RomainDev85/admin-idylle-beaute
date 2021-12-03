@@ -1,8 +1,7 @@
 .sidebar-open {
-    min-height: 100vh;
     height: 100%;
     background: $color-black;
-    position: absolute;
+    position: fixed;
     width: 300px;
     transition-duration: 0.7s;
 
@@ -18,10 +17,9 @@
     }  
 }
 .sidebar-close {
-    position: absolute;
-    top: 0;
-    left: 0;
+    position: fixed;
     min-height: 100vh;
+    height: 100%;
     background: $color-black;
     width: 70px;
     transition-duration: 0.7s;
