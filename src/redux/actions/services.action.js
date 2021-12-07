@@ -1,15 +1,15 @@
 import axios from 'axios';
 
-export const GET_SERVICES_BY_CATEGORY = "GET_SERVICES_BY_CATEGORY";
+export const GET_SERVICES = "GET_SERVICES";
 export const RESET_SERVICES = "RESET_SERVICES";
 export const DELETE_SERVICE = "DELETE_SERVICE";
 
-export const getServicesByCategory = (nameCategory, idCategory) => {
+export const getServices = () => {
     return (dispatch) => {
         return axios
-            .get(`${process.env.REACT_APP_BASE_URL}/api/services/${nameCategory}`)
+            .get(`${process.env.REACT_APP_BASE_URL}/api/services`)
             .then((res) => {
-                dispatch({type: GET_SERVICES_BY_CATEGORY, payload: { name: nameCategory, idCategory: idCategory, services: res.data}})
+                dispatch({type: GET_SERVICES, payload: res.data})
             })
             .catch(err => console.log(err))
     }

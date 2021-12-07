@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { getCategories } from '../redux/actions/categories.action';
+import { getServices } from '../redux/actions/services.action';
 import { isEmpty } from '../utils/Utils';
 import Category from './Category';
 
@@ -13,6 +14,7 @@ export default function ListCategories() {
     useEffect(() => {
         if(loading){
             dispatch(getCategories());
+            dispatch(getServices());
             setLoading(false);
         }
     }, [loading, dispatch])

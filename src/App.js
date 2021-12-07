@@ -14,6 +14,7 @@ import { getUser } from "./redux/actions/user.action";
 const store = createStore(
   rootReducer,
   composeWithDevTools(applyMiddleware(thunk))
+  // applyMiddleware(thunk)
 );
 
 store.dispatch(getUser());
