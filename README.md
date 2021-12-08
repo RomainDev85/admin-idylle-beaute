@@ -1,1 +1,1 @@
-Application d'administration d'Idylle Beaute, developper avec React et Redux.
+Application d'administration d'Idylle Beaute avec authentification, developper avec React et Redux.
