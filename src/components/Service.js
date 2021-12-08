@@ -28,7 +28,6 @@ export default function Service({ id, name, description, time, price}) {
         };
 
         await dispatch(editService(data));
-        await dispatch(getServices());
         setFormEditService(false);
 
     }
@@ -53,15 +52,15 @@ export default function Service({ id, name, description, time, price}) {
                         <div className="left">
                             <label htmlFor="name">Nom</label>
                             <input type="text" value={editName} onChange={(e) => setEditName(e.target.value)} id="name"/>
-                            {description !==null && <label htmlFor="description">Description</label>}
-                            {description !== null && <input type="text" id="description" value={editDescription} onChange={(e) => setEditDescription(e.target.value)}/>}
+                            <label htmlFor="description">Description</label>
+                            <input type="text" id="description" value={editDescription} onChange={(e) => setEditDescription(e.target.value)}/>
                         </div>
                         <div className="right" style={formEditService ? {alignItems: "flex-start", marginLeft: "40px"} : {alignItems: "flex-end"}}>
                             <label htmlFor="price">Prix ( € )</label>
                             <input type="text" id="price" value={editPrice} onChange={(e) => setEditPrice(e.target.value)}/>
-                            {time !== null && <label htmlFor="description">Temps</label>}
-                            {time !== null && <input type="text" value={editTime} onChange={(e) => setEditTime(e.target.value)}/>}
-                            {formEditService && <input type="submit" value="Modifier" /> }
+                            <label htmlFor="description">Temps</label>
+                            <input type="text" value={editTime} onChange={(e) => setEditTime(e.target.value)}/>
+                            <input type="submit" value="Modifier" />
                         </div>
                     </form>
                 }

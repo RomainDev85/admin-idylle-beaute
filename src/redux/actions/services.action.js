@@ -42,8 +42,8 @@ export const editService = (data) => {
                 data: data
             })
             .then((res) => {
-                console.log(res.data);
-                dispatch({type: EDIT_SERVICE, payload: res.data})            
+                if(res.data.success) dispatch({type: EDIT_SERVICE, payload: {...res.data, id: data.id}})
+                else dispatch({type: EDIT_SERVICE, payload: {...res.data, id: data.id}})        
             })
             .catch(err => console.log(err));
     };
