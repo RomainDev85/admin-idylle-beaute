@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { deleteService, getServices, editService } from '../redux/actions/services.action';
+import { showModalDeleteService } from '../redux/actions/modalDeleteService.action';
+import { editService } from '../redux/actions/services.action';
 
 export default function Service({ id, name, description, time, price}) {
 
@@ -66,7 +67,8 @@ export default function Service({ id, name, description, time, price}) {
                 }
                 <div className="action">
                     <i className="far fa-edit" onClick={() => setFormEditService(!formEditService)}></i>
-                    <i className="far fa-trash-alt" onClick={async () => { await dispatch(deleteService(id)); dispatch(getServices()); }}></i>
+                    {/* <i className="far fa-trash-alt" onClick={async () => { await dispatch(deleteService(id)); dispatch(getServices()); }}></i> */}
+                    <i className="far fa-trash-alt" onClick={() => dispatch(showModalDeleteService(id))}></i>
                 </div>
             </div>
         </li>

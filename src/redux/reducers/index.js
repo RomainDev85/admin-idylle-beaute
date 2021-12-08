@@ -4,6 +4,7 @@ import menuReducer from "./menu.reducer";
 import screenReducer from "./screen.reducer";
 import categoriesReducer from "./categories.reducer";
 import servicesReducer from "./services.reducer";
+import modalDeleteServiceReducer from "./modalDeleteService.reducer";
 
 export default combineReducers({
     userReducer,
@@ -11,4 +12,5 @@ export default combineReducers({
     screenReducer,
     categoriesReducer,
     servicesReducer,
+    modalDeleteServiceReducer,
 })

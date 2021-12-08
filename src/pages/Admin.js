@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import { Navigate } from 'react-router';
 import ListCategories from '../components/ListCategories';
+import ModalDeleteService from '../components/ModalDeleteService';
 import Sidebar from '../components/Sidebar';
 import { setMenu } from '../redux/actions/menu.action';
 import { setScreen } from '../redux/actions/screen.action';
@@ -11,6 +12,7 @@ export default function Admin() {
     const user = useSelector(state => state.userReducer);
     const screen = useSelector(state => state.screenReducer);
     const menu = useSelector(state => state.menuReducer);
+    const modalDeleteService = useSelector(state => state.modalDeleteServiceReducer);
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -43,6 +45,7 @@ export default function Admin() {
                 <main className="admin-content" style={menu.open && !screen.little ? {marginLeft: "300px"} : {marginLeft: "70px"}}>
                     <h2>Administration Idylle Beauté</h2>
                     <ListCategories/>
+                    {modalDeleteService.open && <ModalDeleteService />}
                 </main>
             </div>
         )

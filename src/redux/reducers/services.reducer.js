@@ -9,7 +9,9 @@ export default function servicesReducer(state = initialState, action){
         case RESET_SERVICES:
             return action.payload;
         case DELETE_SERVICE:
-            return state.filter((service) => service.service_id !== action.payload);
+            return state.filter((service) => {
+                return service.service_id !== action.payload.idService
+            });
         case EDIT_SERVICE:
             return state.map((service) => {
                 if(action.payload.id === service.service_id){
