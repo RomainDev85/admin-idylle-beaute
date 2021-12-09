@@ -1,6 +1,6 @@
 import { ADD_CATEGORY, GET_CATEGORIES, RESET_CATEGORIES } from "../actions/categories.action";
 
-const initialState = {}
+const initialState = {};
 
 export default function categoriesReducer(state = initialState, action){
     switch (action.type){
@@ -8,8 +8,9 @@ export default function categoriesReducer(state = initialState, action){
             return action.payload;
         case RESET_CATEGORIES:
             return action.payload;
-        case ADD_CATEGORY: 
-            return [...state, action.payload];
+        case ADD_CATEGORY:
+            if(action.payload.errors) return state;
+            else return [...state, action.payload];
         default: 
             return state;
     }
