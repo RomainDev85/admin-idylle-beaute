@@ -1,10 +1,10 @@
-.modal-delete-service {
+.modal-create-category {
     z-index: 1;
     position: fixed;
     width: 100vw;
     height: 100vh;
     background: rgba($color: $color-black, $alpha: .5);
-    
+
     .modal {
         position: absolute;
         z-index: 2;
@@ -15,6 +15,16 @@
         top: 45%;
         left: 50%;
         transform: translate(-50%, -50%);
+        display: flex;
+        flex-direction: column;
+
+        i {
+            position: absolute;
+            cursor: pointer;
+            top: 10px;
+            right: 10px;
+            font-size: 30px;
+        }
 
         h3 {
             font-family: $font-second;
@@ -22,21 +32,20 @@
             font-size: 30px;
         }
 
-        p {
+        label {
             font-family: $font-second;
             font-weight: lighter;
             font-size: 22px;
             color: $color-gray;
-            margin-top: 30px;
+            margin-top: 10px;
             margin-left: 20px;
         }
 
-        i {
-            cursor: pointer;
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            font-size: 30px;
+        input[type=text] {
+            padding: 5px 10px;
+            font-size: 20px;
+            width: 50%;
+            margin: 5px 20px;
         }
 
         .action {
@@ -54,11 +63,8 @@
                 font-size: 20px;
             }
 
-            .delete {
-                background: $color-red;
-            }
-            .cancel {
-                background: $color-gray;
+            .create {
+                background: $color-green;
             }
         }
     }

@@ -1,0 +1,131 @@
+.modal-create-service {
+    z-index: 1;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background: rgba($color: $color-black, $alpha: .5);
+
+    .modal {
+        position: absolute;
+        z-index: 2;
+        width: 800px;
+        background: $color-light;
+        opacity: 1;
+        top: 45%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        flex-direction: column;
+
+        i {
+            position: absolute;
+            cursor: pointer;
+            top: 10px;
+            right: 10px;
+            font-size: 30px;
+        }
+
+        h3 {
+            font-family: $font-second;
+            margin: 10px;
+            font-size: 30px;
+        }
+
+        label {
+            font-family: $font-second;
+            font-weight: lighter;
+            font-size: 22px;
+            color: $color-gray;
+            margin-top: 10px;
+            margin-left: 20px;
+        }
+
+        input[type=text] {
+            padding: 5px 10px;
+            font-size: 20px;
+            width: 50%;
+            margin: 5px 20px;
+        }
+
+        .title-and-category {
+
+            display: flex;
+
+            .title {
+                width: 50%;
+                display: flex;
+                flex-direction: column;
+
+                input[type=text] {
+                    width: 80%;
+                }
+            }
+    
+            .select-category {
+                width: 50%;
+                display: flex;
+                flex-direction: column;
+
+                select {
+                    padding: 5px 10px;
+                    font-size: 20px;
+                    margin: 5px 20px;
+                    width: 80%;
+                }
+            }
+        }
+
+
+        .description {
+            display: flex;
+            flex-direction: column;
+
+            textarea {
+                width: 90%;
+                margin: 5px 20px;
+                padding: 5px 10px;
+                font-size: 20px;
+            }
+        }
+
+        .time-and-price {
+            width: 100%;
+            display: flex;
+
+            .price {
+                width: 50%;
+                display: flex;
+                flex-direction: column;
+
+            }
+
+            .time {
+                width: 50%;
+                display: flex;
+                flex-direction: column;
+            }
+
+            input[type=text] {
+                width: 80%;
+            }
+        }
+
+        .action {
+
+            height: 60px;
+
+            input[type=submit] {
+                cursor: pointer;
+                color: $color-light;
+                background: $color-green;
+                border: 0;
+                border-radius: 4px;
+                padding: 8px 16px;
+                font-size: 20px;
+                position: absolute;
+                bottom: 10px;
+                right: 10px;
+            }
+        }
+    }
+}
