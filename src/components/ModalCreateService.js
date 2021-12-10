@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { hideModalCreateService } from '../redux/actions/modalCreateService';
+import { addService } from '../redux/actions/services.action';
 import { isEmpty } from '../utils/Utils';
 
 export default function ModalCreateService() {
@@ -14,7 +15,7 @@ export default function ModalCreateService() {
     const [time, setTime] = useState('');
 
 
-    const handleForm = (e) => {
+    const handleForm = async (e) => {
         e.preventDefault();
 
         const data = {
@@ -23,7 +24,10 @@ export default function ModalCreateService() {
             description: description,
             price: price,
             time: time
-        }
+        };
+
+        await dispatch(addService(data));
+        dispatch(hideModalCreateService());
 
     }
 

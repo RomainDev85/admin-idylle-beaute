@@ -1,4 +1,4 @@
-import { GET_SERVICES, RESET_SERVICES, DELETE_SERVICE, EDIT_SERVICE } from "../actions/services.action";
+import { GET_SERVICES, RESET_SERVICES, DELETE_SERVICE, EDIT_SERVICE, ADD_SERVICE } from "../actions/services.action";
 
 const initialState = [];
 
@@ -29,6 +29,9 @@ export default function servicesReducer(state = initialState, action){
                 }
                 else return service;
             });
+        case ADD_SERVICE:
+            if(action.payload.success) return [...state, action.payload];
+            else return state;
         default: 
             return state;
     }

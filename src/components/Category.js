@@ -23,7 +23,7 @@ export default function Category({idCategory, nameCategory, urlCategory}) {
             </div>
             <ul className={showServices ? "list-open" : "list-close"} id={urlCategory}>
                 {!isEmpty(services) && services.map((element) => {
-                    if(element.url_category === urlCategory){
+                    if(element.category_id === idCategory){
                         return (
                             <Service
                                 key={element.service_id}
