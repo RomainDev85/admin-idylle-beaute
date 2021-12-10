@@ -33,6 +33,14 @@
         display: block;
         border: 1px solid $color-gray;
 
+        .no-service {
+            display: flex;
+            justify-content: center;
+            padding: 15px 30px;
+            font-family: $font-second;
+            font-size: 22px;
+        }
+
         .service-content {
             padding: 15px 30px;
             display: flex;

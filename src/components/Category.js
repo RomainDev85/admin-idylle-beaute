@@ -22,6 +22,7 @@ export default function Category({idCategory, nameCategory, urlCategory}) {
                 </div>
             </div>
             <ul className={showServices ? "list-open" : "list-close"} id={urlCategory}>
+                {!isEmpty(services) && services.filter(element => element.category_id === idCategory).length === 0 && <li className='no-service'>Aucune prestation n'est associé a cette catégorie.</li>}
                 {!isEmpty(services) && services.map((element) => {
                     if(element.category_id === idCategory){
                         return (
